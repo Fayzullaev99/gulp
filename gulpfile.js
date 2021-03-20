@@ -4,12 +4,13 @@ global.$ = {
   bs: require('browser-sync').create(),
   path:{
     serverDir: './app/dist',
+    tasks: require('./gulp/config/tasks.js'),
     src:{
       html: './app/src/*.{html,pug,jade}',
       css:  './app/src/styles/main.scss',
       js:   './app/src/scripts/*.js',
       font: './app/src/fonts/**/*.*',
-      img:  './app/src/images/.{gif,jfif,jpg,jpeg,webp,png}'
+      img:  './app/src/images/.{gif,jfif,jpg,jpeg,webp,png,tiff}'
     },
     build:{
       html: './app/dist/',
@@ -27,5 +28,5 @@ global.$ = {
     }
   }
 }
-const html = require('./gulp/tasks/html.js')()
-const css = require('./gulp/tasks/css.js')()
+$.path.tasks.forEach(task => require(task)());
+$.gulp.task('default', $.gulp.series($.gulp.parallel('html','css','js','img','font','watch','serve')))

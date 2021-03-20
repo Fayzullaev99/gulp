@@ -1,7 +1,8 @@
 $black: black;
+$yellow: yellow;
 
-.header{
-  background: $black;
+body{
+  background: $yellow;
   &__content{
     color: $black;
   }
