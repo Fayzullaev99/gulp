@@ -1,9 +1,3 @@
-$black: black;
-$yellow: yellow;
-
-body{
-  background: $yellow;
-  &__content{
-    color: $black;
-  }
-}
+@import 'layout/var',
+        'layout/font',
+        'layout/header';
