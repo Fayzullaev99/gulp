@@ -20,7 +20,7 @@ global.$ = {
         img:  './app/dist/images/'
       },
       watch:{
-        html: ['./app/src/*.{pug,html,jade}','./app/src/views/.{pug,html,jade}'],
+        html: ['./app/src/*.{pug,html,jade}','./app/src/views/**/*.{pug,html,jade}'],
         css:  ['./app/src/styles/*.scss','./app/src/styles/**/*.scss'],
         js:   './app/src/scripts/*.js',
         font: './app/src/fonts/**/*.*',
